@@ -11,9 +11,9 @@ export const lightPalette = {
     dark: "#084d92",
   },
   secondary: {
-    ligth: "rgba(0,0,0.0.5)",
-    main: "rgba(0,0,0.0.6)",
-    dark: "rgba(0,0,0.0.7)",
+    ligth: "rgba(0,0,0,0.5)",
+    main: "rgba(0,0,0,0.6)",
+    dark: "rgba(0,0,0,0.7)",
   },
   background: {
     paper: "#fff",
@@ -33,10 +33,16 @@ export const darkPalette = {
     main: "#58a6ff",
     dark: "#1f6feb",
   },
+  secondary: {
+    ligth: "rgba(200,200,200,0.5)",
+    main: "rgba(200,200,200,0.6)",
+    dark: "rgba(200,200,255,0.7)",
+  },
   background: {
     paper: "#161b22 ",
     default: "#0d1117",
   },
+
   text: {
     primary: "#c9d1d9",
     secondary: "#8b949e",
