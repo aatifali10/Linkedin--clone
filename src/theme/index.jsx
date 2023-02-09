@@ -13,6 +13,52 @@ const ThemeCustomization = ({ children }) => {
     () =>
       createTheme({
         palette: mode === ThemeMode.light ? lightPalette : darkPalette,
+        typography: {
+          h1: {
+            fontSize: "2rem",
+            fontWeight: "bold",
+          },
+          h2: {
+            fontSize: "1.5rem",
+            fontWeight: "bold",
+          },
+          h3: {
+            fontSize: "1.3rem",
+            fontWeight: "bold",
+          },
+          subtitle1: {
+            fontSize: "0.95rem",
+            fontWeight: "bold",
+          },
+          subtitle2: {
+            fontSize: "0.9rem",
+            fontWeight: "bold",
+          },
+          body1: {
+            fontSize: "0.95rem",
+            fontWeight: "normal",
+          },
+          body2: {
+            fontSize: "0.9rem",
+            fontWeight: "normal",
+          },
+        },
+
+        components: {
+          MuiButton: {
+            styleOverrides: {
+              outlined: {
+                textTransform: "capitalize",
+                fontWeight: "bold",
+                borderWidth: 2,
+                ":hover": {
+                  borderWidth: 2,
+                },
+                lineHeight: 1,
+              },
+            },
+          },
+        },
       }),
     [mode]
   );

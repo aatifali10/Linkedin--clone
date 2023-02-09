@@ -1,16 +1,17 @@
 import React from "react";
 import { Paper, Typography } from "@mui/material";
+import { alpha, styled } from "@mui/material/styles";
 
-// const Heading = styled(Typography)(({ theme }) => ({}));
+const Followers = styled(Typography)(({ theme }) => ({
+  color: alpha(theme.palette.text.primary, 0.6),
+}));
 
 const ProfileActivity = () => {
   return (
-    <Paper sx={{ mt: 1, p: 2.5 }}>
-      <Typography variant="h6">Activity</Typography>
-      <Typography variant="span" sx={{ fontSize: 12 }}>
-        43,270 followers
-      </Typography>
-      <Typography variant="h6" sx={{ fontSize: 20, mt: 2 }}>
+    <Paper sx={{ mt: 1, p: 3 }}>
+      <Typography variant="h3">Activity</Typography>
+      <Followers variant="body2">43,270 followers</Followers>
+      <Typography variant="subtitle1" sx={{ mt: 2 }}>
         Parag hasn't posted lately
       </Typography>
       <Typography variant="body2">

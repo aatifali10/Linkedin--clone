@@ -5,8 +5,8 @@ import { Paper, Typography } from "@mui/material";
 
 const ProfileAbout = () => {
   return (
-    <Paper sx={{ mt: 1, p: 2.5 }}>
-      <Typography variant="h6" sx={{ mb: 1 }}>
+    <Paper sx={{ mt: 1, p: 3 }}>
+      <Typography variant="h3" sx={{ mb: 1 }}>
         About
       </Typography>
       <Typography variant="body2">
