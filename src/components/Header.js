@@ -1,11 +1,16 @@
-import { Switch } from "@mui/material";
+import { IconButton } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
 import styled from "styled-components";
-// import { useState } from "react";
-// import { ThemeProvider } from "styled-components";
-// import { createTheme } from "@mui/material/styles";
-// import CssBaseline from "@mui/material/CssBaseline";
+
+import Brightness4Icon from "@mui/icons-material/Brightness4";
+import Brightness7Icon from "@mui/icons-material/Brightness7";
+import { useContext } from "react";
+import { ColorModeContext } from "../theme/ThemeContext";
 
 const Header = () => {
+  const theme = useTheme();
+  const { toggleColorMode } = useContext(ColorModeContext);
+
   return (
     <>
       <Container>
@@ -81,11 +86,17 @@ const Header = () => {
                   </span>
                 </a>
               </Work>
-              <Switch
-                // checked={checked}
-                // onChange={handleChange}
-                inputProps={{ "aria-label": "controlled" }}
-              />
+              <IconButton
+                sx={{ ml: 1 }}
+                onClick={toggleColorMode}
+                color="inherit"
+              >
+                {theme.palette.mode === "dark" ? (
+                  <Brightness7Icon />
+                ) : (
+                  <Brightness4Icon />
+                )}
+              </IconButton>
             </NavListWrap>
           </Nav>
         </Content>

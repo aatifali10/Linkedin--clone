@@ -1,4 +1,3 @@
-import "./App.css";
 import { Route, BrowserRouter, Routes } from "react-router-dom";
 import Header from "./components/Header";
 import User from "./userProfile/User";
