@@ -1,27 +1,26 @@
 import React, { Fragment } from "react";
 import { Paper, Typography, Stack, Box, Divider } from "@mui/material";
-import LockIcon from "@mui/icons-material/Lock";
+import BoyIcon from "@mui/icons-material/Boy";
 import MuiButton from "@mui/material/Button";
-import AddIcon from "@mui/icons-material/AddOutlined";
 
 const People = [
   {
-    name: "Drew Houston",
+    name: "shamoon KhOkhar",
     img: "/images/Drew.jpg",
-    title: "CEO, Dropbox",
-    button: "Follow",
+    title: "React native developer",
+    button: "Connect",
   },
   {
-    name: "Ned Segal",
+    name: "Ammar Ahmed",
     img: "/images/ned.jpg",
-    title: "Former CFO at Twitter",
-    button: "Message",
+    title: "Assistant Software Enginner at Cubix",
+    button: "Connect",
   },
   {
-    name: "Reed Hastings",
+    name: "Akash Kumar",
     img: "/images/reed.jpg",
-    title: "Chairman Netflix",
-    button: "Follow",
+    title: "--",
+    button: "Connect",
   },
   {
     name: "Susan Wojcicki",
@@ -37,7 +36,7 @@ const People = [
   },
 ];
 
-const PeopleViewed = () => {
+const PeopleKnow = () => {
   return (
     <Paper sx={{ p: 2.5 }}>
       <Typography variant="h3">People also viewed</Typography>
@@ -71,7 +70,7 @@ const PeopleViewed = () => {
                 borderRadius: "50px",
                 marginTop: "10px",
               }}
-              startIcon={<AddIcon />}
+              startIcon={<BoyIcon />}
             >
               {button}
             </MuiButton>
@@ -84,4 +83,4 @@ const PeopleViewed = () => {
   );
 };
 
-export default PeopleViewed;
+export default PeopleKnow;

@@ -8,6 +8,7 @@ import ProfileSkills from "../components/ProfileSkills";
 import PeopleIcon from "@mui/icons-material/People";
 import Interests from "../components/Interests";
 import PeopleViewed from "../components/PeopleViewed";
+import PeopleKnow from "../components/PeopleKnow";
 
 const education = [
   {
@@ -92,6 +93,7 @@ const User = () => {
         <Grid item sm={3}>
           <Paper style={{ height: 100 }}></Paper>
           <PeopleViewed />
+          <PeopleKnow />
         </Grid>
       </Grid>
     </Container>
