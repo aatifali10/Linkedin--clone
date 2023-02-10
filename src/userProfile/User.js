@@ -1,16 +1,18 @@
-import { Container, Grid } from "@mui/material";
+import { Container, Grid, Paper } from "@mui/material";
 
 import ProfileAbout from "../components/ProfileAbout";
 import ProtfilePhoto from "../components/ProtfilePhoto";
 import ProfileActivity from "../components/ProfileActivity";
 import ProfileEductionAndExperience from "../components/ProfileEductionAndExperience";
+import ProfileSkills from "../components/ProfileSkills";
+import PeopleIcon from "@mui/icons-material/People";
 
 const education = [
   {
     name: "Standford University",
     img: "/images/Stanford-uni.jpg",
-    title: "Doctor of philosophy (PhD), Computer Science",
-    years: "2005 - 2012",
+    title: "",
+    years: "11 yrs 1 mo",
   },
   {
     name: "Indian institute of technology, Bombay",
@@ -20,7 +22,7 @@ const education = [
   },
   {
     name: "Atomic Energy Central School",
-    img: "/images/Stanford-uni.jpg",
+    img: "/images/NoImage.png",
     title: "",
     years: "",
   },
@@ -28,50 +30,64 @@ const education = [
 
 const experience = [
   {
-    name: "Standford University",
-    img: "/images/India.jpg",
+    name: "Twitter",
+    img: "/images/Twitter.jpg",
+    years: "11 yrs 1 mo",
     subList: [
       {
         title: "CEO",
-        years: "2010 - 2012",
+        years: "Nov 2021 - Oct 2022 . 1 yr",
       },
       {
-        title: "CEO",
-        years: "2010 - 2012",
+        title: "CTO",
+        years: "Oct 2017 - Nov 2021 . 4 yrs 2 mo",
       },
       {
-        title: "CEO",
-        years: "2010 - 2012",
+        title: "Distinguished Software Engineer",
+        years: "Oct 2011 - Oct 2017 . 6 yrs 1 mo",
       },
     ],
   },
   {
-    name: "Indian institute of technology, Bombay",
-    img: "/images/India.jpg",
-    title: "B.Tech., Computer Science and Engineering",
-    years: "2005 - 2012",
+    name: "Research",
+    img: "/images/AT&T.jpg",
+    title: "AT&T Labs, Inc",
+    years: "Jun 2010 - Sep 2010 . 4 mos",
   },
   {
-    name: "Atomic Energy Central School",
-    img: "/images/Stanford-uni.jpg",
-    title: "",
-    years: "",
+    name: "Research",
+    img: "/images/Research.jpg",
+    title: "Microsoft Corporation",
+    years: "Jun 2009 - Sep 2009 . 4 mos",
+  },
+  {
+    name: "Research",
+    img: "/images/Yahoo.jpg",
+    title: "Yahoo!",
+    years: "Jun 2007 - Sep 2008 . 1yr 4 mos",
+  },
+  {
+    name: "Research",
+    img: "/images/Research.jpg",
+    title: "Microsoft",
+    years: "Jun 2006 - Sep 2006 . 4 mos",
   },
 ];
 
 const User = () => {
   return (
     <Container>
-      <Grid container>
+      <Grid container spacing={2}>
         <Grid item sm={9}>
           <ProtfilePhoto />
           <ProfileAbout />
           <ProfileActivity />
           <ProfileEductionAndExperience title="Experience" list={experience} />
           <ProfileEductionAndExperience title="Education" list={education} />
+          <ProfileSkills />
         </Grid>
         <Grid item sm={3}>
-          <></>
+          <Paper style={{ height: 1000 }}>bac</Paper>
         </Grid>
       </Grid>
     </Container>
