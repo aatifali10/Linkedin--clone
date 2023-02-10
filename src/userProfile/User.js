@@ -6,6 +6,7 @@ import ProfileActivity from "../components/ProfileActivity";
 import ProfileEductionAndExperience from "../components/ProfileEductionAndExperience";
 import ProfileSkills from "../components/ProfileSkills";
 import PeopleIcon from "@mui/icons-material/People";
+import Interests from "../components/Interests";
 
 const education = [
   {
@@ -85,6 +86,7 @@ const User = () => {
           <ProfileEductionAndExperience title="Experience" list={experience} />
           <ProfileEductionAndExperience title="Education" list={education} />
           <ProfileSkills />
+          <Interests />
         </Grid>
         <Grid item sm={3}>
           <Paper style={{ height: 1000 }}>bac</Paper>

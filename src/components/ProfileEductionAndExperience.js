@@ -33,9 +33,9 @@ const ProfileEduction = ({ title, list }) => {
               {name && <Typography variant="subtitle1">{name}</Typography>}
               {title && <Typography variant="body2">{title}</Typography>}
               {years && <YearsText variant="body2">{years}</YearsText>}
-              <SubList subList={subList} />
             </Stack>
           </Stack>
+          <SubList subList={subList} />
           {i !== list.length - 1 && <Divider style={{ marginTop: 15 }} />}
         </Fragment>
       ))}
@@ -49,7 +49,6 @@ const SubList = ({ subList }) => {
   return (
     <Timeline
       sx={{
-        paddingLeft: 0,
         [`& .${timelineItemClasses.root}:before`]: {
           flex: 0,
           padding: 0,
@@ -57,13 +56,13 @@ const SubList = ({ subList }) => {
       }}
     >
       {subList?.map(({ title, years }, i) => (
-        <TimelineItem key={title + years + i} pl={0}>
+        <TimelineItem key={title + years + i}>
           <TimelineSeparator>
             <TimelineDot />
             <TimelineConnector />
           </TimelineSeparator>
-          <TimelineContent>
-            {title && <Typography variant="body2">{title}</Typography>}
+          <TimelineContent ml={1.8}>
+            {title && <Typography variant="subtitle2">{title}</Typography>}
             {years && <YearsText variant="body2">{years}</YearsText>}
           </TimelineContent>
         </TimelineItem>

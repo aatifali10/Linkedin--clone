@@ -14,25 +14,37 @@ const ThemeCustomization = ({ children }) => {
       createTheme({
         palette: mode === ThemeMode.light ? lightPalette : darkPalette,
         typography: {
+          fontFamily: [
+            "-apple-system",
+            "BlinkMacSystemFont",
+            '"Segoe UI"',
+            "Roboto",
+            '"Helvetica Neue"',
+            "Arial",
+            "sans-serif",
+            '"Apple Color Emoji"',
+            '"Segoe UI Emoji"',
+            '"Segoe UI Symbol"',
+          ].join(","),
           h1: {
             fontSize: "2rem",
-            fontWeight: "bold",
+            fontWeight: "600",
           },
           h2: {
             fontSize: "1.5rem",
-            fontWeight: "bold",
+            fontWeight: "600",
           },
           h3: {
             fontSize: "1.3rem",
-            fontWeight: "bold",
+            fontWeight: "600",
           },
           subtitle1: {
             fontSize: "0.95rem",
-            fontWeight: "bold",
+            fontWeight: "600",
           },
           subtitle2: {
             fontSize: "0.9rem",
-            fontWeight: "bold",
+            fontWeight: "600",
           },
           body1: {
             fontSize: "0.95rem",

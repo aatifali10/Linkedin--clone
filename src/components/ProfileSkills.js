@@ -6,7 +6,7 @@ const skills = [
     title: "Algorithm",
     endorseement: [
       {
-        img: "/images/NoImage.png",
+        img: "/images/People.jpg",
         title:
           "Endorsed by Antoine Atallah and 2 others who are highly skilled at this",
       },
@@ -24,7 +24,7 @@ const skills = [
     title: "Algorithm",
     endorseement: [
       {
-        img: "/images/NoImage.png",
+        img: "/images/People.jpg",
         title:
           "Endorsed by Antoine Atallah and 2 others who are highly skilled at this",
       },
@@ -42,7 +42,7 @@ const skills = [
     title: "Algorithm",
     endorseement: [
       {
-        img: "/images/NoImage.png",
+        img: "/images/People.jpg",
         title:
           "Endorsed by Antoine Atallah and 2 others who are highly skilled at this",
       },
