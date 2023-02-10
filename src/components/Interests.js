@@ -14,6 +14,65 @@ import Paper from "@mui/material/Paper";
 import Button from "@mui/material/Button";
 import AddIcon from "@mui/icons-material/AddOutlined";
 import { styled } from "@mui/material/styles";
+import { Stack } from "@mui/system";
+
+const People = [
+  {
+    name: "Drew Houston",
+    img: "/images/Drew.jpg",
+    title: "CEO, Dropbox",
+    Button: [
+      {
+        img: "/images/plus.png",
+        title: "Follow",
+      },
+    ],
+  },
+  {
+    name: "Ned Segal",
+    img: "/images/ned.jpg",
+    title: "Former CFO at Twitter",
+    Button: [
+      {
+        img: "/images/lock.png",
+        title: "Message",
+      },
+    ],
+  },
+  {
+    name: "Reed Hastings",
+    img: "/images/reed.jpg",
+    title: "Chairman Netflix",
+    Button: [
+      {
+        img: "/images/plus.png",
+        title: "Follow",
+      },
+    ],
+  },
+  {
+    name: "Susan Wojcicki",
+    img: "/images/susan.jpg",
+    title: "CEO of Youtube",
+    Button: [
+      {
+        img: "/images/lock.png",
+        title: "Message",
+      },
+    ],
+  },
+  {
+    name: "Neha Parikh ",
+    img: "/images/neha.jpg",
+    title: "CEO at Waze",
+    Button: [
+      {
+        img: "/images/plus.png",
+        title: "Follow",
+      },
+    ],
+  },
+];
 
 const MuiButton = styled(Button)(({ theme }) => ({
   borderRadius: theme.shape.borderRadius * 10,
@@ -77,38 +136,72 @@ export default function Interests() {
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
-        <List direction="row">
-          <ListItem alignItems="flex-start">
-            <ListItemAvatar>
-              <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
-            </ListItemAvatar>
-            <Box>
-              <ListItemText
-                primary={
-                  <Typography variant="subtitle1" color="text.primary">
-                    Ali Connors
-                  </Typography>
-                }
-                secondary={
-                  <Typography
-                    component="span"
-                    variant="body2"
-                    color="text.primary"
-                  >
-                    Ali Connors
-                  </Typography>
-                }
-              />
-              <MuiButton
-                variant="outlined"
-                color="secondary"
-                startIcon={<AddIcon />}
-              >
-                follow
-              </MuiButton>
-            </Box>
-          </ListItem>
-        </List>
+        <Stack direction="row" spacing={20}>
+          <List direction="row">
+            <ListItem alignItems="flex-start">
+              <ListItemAvatar>
+                <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
+              </ListItemAvatar>
+              <Box>
+                <ListItemText
+                  primary={
+                    <Typography variant="subtitle1" color="text.primary">
+                      Ali Connors
+                    </Typography>
+                  }
+                  secondary={
+                    <Typography
+                      component="span"
+                      variant="body2"
+                      color="text.primary"
+                    >
+                      Ali Connors
+                    </Typography>
+                  }
+                />
+                <MuiButton
+                  variant="outlined"
+                  color="secondary"
+                  startIcon={<AddIcon />}
+                >
+                  follow
+                </MuiButton>
+              </Box>
+            </ListItem>
+          </List>
+          <List direction="row">
+            <ListItem alignItems="flex-start">
+              <ListItemAvatar>
+                <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
+              </ListItemAvatar>
+              <Box>
+                <ListItemText
+                  primary={
+                    <Typography variant="subtitle1" color="text.primary">
+                      Ali Connors
+                    </Typography>
+                  }
+                  secondary={
+                    <Typography
+                      component="span"
+                      variant="body2"
+                      color="text.primary"
+                    >
+                      Ali Connors
+                    </Typography>
+                  }
+                />
+                <MuiButton
+                  variant="outlined"
+                  color="secondary"
+                  startIcon={<AddIcon />}
+                >
+                  follow
+                </MuiButton>
+              </Box>
+            </ListItem>
+          </List>
+        </Stack>
       </TabPanel>
 
       <TabPanel value={value} index={1}>
