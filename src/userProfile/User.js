@@ -1,11 +1,10 @@
-import { Container, Grid, Paper } from "@mui/material";
+import { Container, Grid, Paper, Hidden } from "@mui/material";
 
 import ProfileAbout from "../components/ProfileAbout";
 import ProtfilePhoto from "../components/ProtfilePhoto";
 import ProfileActivity from "../components/ProfileActivity";
 import ProfileEductionAndExperience from "../components/ProfileEductionAndExperience";
 import ProfileSkills from "../components/ProfileSkills";
-import PeopleIcon from "@mui/icons-material/People";
 import Interests from "../components/Interests";
 import PeopleViewed from "../components/PeopleViewed";
 import PeopleKnow from "../components/PeopleKnow";
@@ -80,8 +79,8 @@ const experience = [
 const User = () => {
   return (
     <Container>
-      <Grid container spacing={2}>
-        <Grid item sm={9}>
+      <Grid container spacing={2} mt={11}>
+        <Grid item md={9} sm={12}>
           <ProtfilePhoto />
           <ProfileAbout />
           <ProfileActivity />
@@ -90,11 +89,12 @@ const User = () => {
           <ProfileSkills />
           <Interests />
         </Grid>
-        <Grid item sm={3}>
-          <Paper style={{ height: 100 }}></Paper>
-          <PeopleViewed />
-          <PeopleKnow />
-        </Grid>
+        <Hidden mdDown={true}>
+          <Grid item md={3}>
+            <PeopleViewed />
+            <PeopleKnow />
+          </Grid>
+        </Hidden>
       </Grid>
     </Container>
   );

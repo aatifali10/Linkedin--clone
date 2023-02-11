@@ -44,7 +44,7 @@ const ConverPhoto = styled(Box)(({ theme }) => ({
 
 const ProtfilePhoto = () => {
   return (
-    <Paper style={{ position: "relative" }}>
+    <Paper style={{ position: "relative", overflow: "hidden" }}>
       <ConverPhoto
         component="img"
         src="/images/userbanner.svg"

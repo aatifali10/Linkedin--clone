@@ -38,7 +38,7 @@ const People = [
 
 const PeopleKnow = () => {
   return (
-    <Paper sx={{ p: 2.5 }}>
+    <Paper sx={{ p: 2.5, mt: 2.5 }}>
       <Typography variant="h3">People also viewed</Typography>
       {People.map(({ name, img, title, button }, i) => (
         <Fragment key={name + "key" + i}>
