@@ -4,12 +4,12 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
+// import List from "@mui/material/List";
+// import ListItem from "@mui/material/ListItem";
 import Divider from "@mui/material/Divider";
-import ListItemText from "@mui/material/ListItemText";
-import ListItemAvatar from "@mui/material/ListItemAvatar";
-import Avatar from "@mui/material/Avatar";
+// import ListItemText from "@mui/material/ListItemText";
+// import ListItemAvatar from "@mui/material/ListItemAvatar";
+// import Avatar from "@mui/material/Avatar";
 import Paper from "@mui/material/Paper";
 import Button from "@mui/material/Button";
 import AddIcon from "@mui/icons-material/AddOutlined";
@@ -18,59 +18,44 @@ import { Stack } from "@mui/system";
 
 const People = [
   {
-    name: "Drew Houston",
-    img: "/images/Drew.jpg",
-    title: "CEO, Dropbox",
-    Button: [
-      {
-        img: "/images/plus.png",
-        title: "Follow",
-      },
-    ],
+    name: "Atomic Energy Central School",
+    img: "/images/NoImage.png",
+    title: "16,430 followers",
+    button: "Follow",
   },
   {
-    name: "Ned Segal",
-    img: "/images/ned.jpg",
-    title: "Former CFO at Twitter",
-    Button: [
-      {
-        img: "/images/lock.png",
-        title: "Message",
-      },
-    ],
+    name: "Indian Institute of Technology, Bombay",
+    img: "/images/India.jpg",
+    title: "361,471 followers",
+    button: "Message",
+  },
+];
+const Groups = [
+  {
+    name: "IIT Bombay Aalumni (Official)",
+    img: "/images/iit.jpg",
+    title: "11,830 followers",
+    button: "Join",
   },
   {
-    name: "Reed Hastings",
-    img: "/images/reed.jpg",
-    title: "Chairman Netflix",
-    Button: [
-      {
-        img: "/images/plus.png",
-        title: "Follow",
-      },
-    ],
+    name: "International Physics Olympiad Alumni",
+    img: "/images/olympiad.jpg",
+    title: "999 followers",
+    button: "Join",
+  },
+];
+const Schools = [
+  {
+    name: "Stanford University",
+    img: "/images/Stanford-uni.jpg",
+    title: "1,164,876 followers",
+    button: "Follow",
   },
   {
-    name: "Susan Wojcicki",
-    img: "/images/susan.jpg",
-    title: "CEO of Youtube",
-    Button: [
-      {
-        img: "/images/lock.png",
-        title: "Message",
-      },
-    ],
-  },
-  {
-    name: "Neha Parikh ",
-    img: "/images/neha.jpg",
-    title: "CEO at Waze",
-    Button: [
-      {
-        img: "/images/plus.png",
-        title: "Follow",
-      },
-    ],
+    name: "Indian Institute of Technology, Bombay",
+    img: "/images/India.jpg",
+    title: "361,471 followers",
+    button: "follow",
   },
 ];
 
@@ -136,141 +121,149 @@ export default function Interests() {
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
-        <Stack direction="row" spacing={20}>
-          <List direction="row">
-            <ListItem alignItems="flex-start">
-              <ListItemAvatar>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
-              </ListItemAvatar>
-              <Box>
-                <ListItemText
-                  primary={
-                    <Typography variant="subtitle1" color="text.primary">
-                      Ali Connors
-                    </Typography>
-                  }
-                  secondary={
-                    <Typography
-                      component="span"
-                      variant="body2"
-                      color="text.primary"
+        <Stack direction="row" spacing={5}>
+          {People.map(({ name, img, title, button }, i) => (
+            <Fragment key={name + "key" + i}>
+              <Stack>
+                <Stack direction="row" mt={1.5}>
+                  <Box
+                    component="img"
+                    src={img}
+                    alt="logo"
+                    height={50}
+                    style={{ borderRadius: "100px" }}
+                  />
+                  <Stack>
+                    <Stack ml={2}>
+                      <Typography variant="subtitle1">{name}</Typography>
+                      <Typography variant="subtitle2">{title}</Typography>
+                    </Stack>
+                    <MuiButton
+                      variant="outlined"
+                      color="secondary"
+                      style={{
+                        borderRadius: "50px",
+                        marginTop: "10px",
+                        width: "100px",
+                        marginLeft: "17px",
+                      }}
+                      startIcon={<AddIcon />}
                     >
-                      Ali Connors
-                    </Typography>
-                  }
-                />
-                <MuiButton
-                  variant="outlined"
-                  color="secondary"
-                  startIcon={<AddIcon />}
-                >
-                  follow
-                </MuiButton>
-              </Box>
-            </ListItem>
-          </List>
-          <List direction="row">
-            <ListItem alignItems="flex-start">
-              <ListItemAvatar>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
-              </ListItemAvatar>
-              <Box>
-                <ListItemText
-                  primary={
-                    <Typography variant="subtitle1" color="text.primary">
-                      Ali Connors
-                    </Typography>
-                  }
-                  secondary={
-                    <Typography
-                      component="span"
-                      variant="body2"
-                      color="text.primary"
-                    >
-                      Ali Connors
-                    </Typography>
-                  }
-                />
-                <MuiButton
-                  variant="outlined"
-                  color="secondary"
-                  startIcon={<AddIcon />}
-                >
-                  follow
-                </MuiButton>
-              </Box>
-            </ListItem>
-          </List>
+                      {button}
+                    </MuiButton>
+                  </Stack>
+                </Stack>
+              </Stack>
+              {/* <Box
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    marginBottom: "10px",
+                  }}
+                ></Box> */}
+
+              <Divider />
+            </Fragment>
+          ))}
         </Stack>
       </TabPanel>
 
       <TabPanel value={value} index={1}>
-        <List direction="row">
-          <ListItem alignItems="flex-start">
-            <ListItemAvatar>
-              <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
-            </ListItemAvatar>
-            <Box>
-              <ListItemText
-                primary={
-                  <Typography variant="subtitle1" color="text.primary">
-                    Ali Connors
-                  </Typography>
-                }
-                secondary={
-                  <Typography
-                    component="span"
-                    variant="body2"
-                    color="text.primary"
-                  >
-                    Ali Connors
-                  </Typography>
-                }
-              />
-              <MuiButton
-                variant="outlined"
-                color="secondary"
-                startIcon={<AddIcon />}
-              >
-                follow
-              </MuiButton>
-            </Box>
-          </ListItem>
-        </List>
+        <Stack direction="row" spacing={5}>
+          {Groups.map(({ name, img, title, button }, i) => (
+            <Fragment key={name + "key" + i}>
+              <Stack>
+                <Stack direction="row" mt={1.5}>
+                  <Box
+                    component="img"
+                    src={img}
+                    alt="logo"
+                    height={50}
+                    style={{ borderRadius: "100px" }}
+                  />
+                  <Stack>
+                    <Stack ml={2}>
+                      <Typography variant="subtitle1">{name}</Typography>
+                      <Typography variant="subtitle2">{title}</Typography>
+                    </Stack>
+                    <MuiButton
+                      variant="outlined"
+                      color="secondary"
+                      style={{
+                        borderRadius: "50px",
+                        marginTop: "10px",
+                        width: "100px",
+                        marginLeft: "17px",
+                      }}
+                      startIcon={<AddIcon />}
+                    >
+                      {button}
+                    </MuiButton>
+                  </Stack>
+                </Stack>
+              </Stack>
+              {/* <Box
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    marginBottom: "10px",
+                  }}
+                ></Box> */}
+
+              <Divider />
+            </Fragment>
+          ))}
+        </Stack>
       </TabPanel>
       <TabPanel value={value} index={2}>
-        <List direction="row">
-          <ListItem alignItems="flex-start">
-            <ListItemAvatar>
-              <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
-            </ListItemAvatar>
-            <Box>
-              <ListItemText
-                primary={
-                  <Typography variant="subtitle1" color="text.primary">
-                    Ali Connors
-                  </Typography>
-                }
-                secondary={
-                  <Typography
-                    component="span"
-                    variant="body2"
-                    color="text.primary"
-                  >
-                    Ali Connors
-                  </Typography>
-                }
-              />
-              <MuiButton
-                variant="outlined"
-                color="secondary"
-                startIcon={<AddIcon />}
-              >
-                follow
-              </MuiButton>
-            </Box>
-          </ListItem>
-        </List>
+        <Stack direction="row" spacing={5}>
+          {Schools.map(({ name, img, title, button }, i) => (
+            <Fragment key={name + "key" + i}>
+              <Stack>
+                <Stack direction="row" mt={1.5}>
+                  <Box
+                    component="img"
+                    src={img}
+                    alt="logo"
+                    height={50}
+                    style={{ borderRadius: "100px" }}
+                  />
+                  <Stack>
+                    <Stack ml={2}>
+                      <Typography variant="subtitle1">{name}</Typography>
+                      <Typography variant="subtitle2">{title}</Typography>
+                    </Stack>
+                    <MuiButton
+                      variant="outlined"
+                      color="secondary"
+                      style={{
+                        borderRadius: "50px",
+                        marginTop: "10px",
+                        width: "100px",
+                        marginLeft: "17px",
+                      }}
+                      startIcon={<AddIcon />}
+                    >
+                      {button}
+                    </MuiButton>
+                  </Stack>
+                </Stack>
+              </Stack>
+              {/* <Box
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    marginBottom: "10px",
+                  }}
+                ></Box> */}
+
+              <Divider />
+            </Fragment>
+          ))}
+        </Stack>
       </TabPanel>
     </Paper>
   );

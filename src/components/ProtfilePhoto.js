@@ -40,11 +40,15 @@ const ProfileDetails = styled(Box)(({ theme }) => ({
 
 const ConverPhoto = styled(Box)(({ theme }) => ({
   minHeight: 195.5,
+  [theme.breakpoints.down("md")]: {
+    height: "auto",
+    width: "100%",
+  },
 }));
 
 const ProtfilePhoto = () => {
   return (
-    <Paper style={{ position: "relative", overflow: "hidden" }}>
+    <Paper style={{ position: "relative" }}>
       <ConverPhoto
         component="img"
         src="/images/userbanner.svg"
