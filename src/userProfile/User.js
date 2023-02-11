@@ -1,4 +1,4 @@
-import { Container, Grid, Paper, Hidden } from "@mui/material";
+import { Container, Grid, Hidden } from "@mui/material";
 
 import ProfileAbout from "../components/ProfileAbout";
 import ProtfilePhoto from "../components/ProtfilePhoto";
