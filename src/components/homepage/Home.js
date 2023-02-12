@@ -7,7 +7,6 @@ import Feed from "./Feed";
 const Home = () => {
   return (
     <>
-      <h1>Hellow world</h1>
       <Container>
         <Grid container spacing={2} mt={11}>
           <Hidden mdDown={true}>
