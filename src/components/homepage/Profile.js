@@ -57,7 +57,7 @@ const ProtfilePhoto = () => {
         </Stack>
         <Typography variant="body2">105 profile views</Typography>
         <Typography variant="body2">322 post impressions</Typography>
-        <Stack spacing={1} mt={1}>
+        <Stack spacing={1} mt={1} m={2}>
           <MuiButton
             variant="outlined"
             color="primary"

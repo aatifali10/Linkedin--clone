@@ -87,7 +87,7 @@ const User = () => {
           <ProfileEductionAndExperience title="Experience" list={experience} />
           <ProfileEductionAndExperience title="Education" list={education} />
           <ProfileSkills />
-          <Interests />
+          {/* <Interests /> */}
         </Grid>
         <Hidden mdDown={true}>
           <Grid item md={3}>

@@ -154,14 +154,6 @@ export default function Interests() {
                   </Stack>
                 </Stack>
               </Stack>
-              {/* <Box
-                  style={{
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    marginBottom: "10px",
-                  }}
-                ></Box> */}
 
               <Divider />
             </Fragment>
