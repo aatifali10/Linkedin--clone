@@ -1,10 +1,19 @@
 import { Grid, Typography, TextField, Button } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import linkedinlogo from "./linkedinlogo.png";
 import { Link } from "react-router-dom";
-import Stack from "@mui/material/Stack";
+import { signInWithPopup } from "firebase/auth";
+import { auth, googleProvider } from "../firebase/setup";
 
 const Signin = () => {
+  const [username, setUsername] = useState("");
+  const SignInWithGoogle = async () => {
+    try {
+      await signInWithPopup(auth, googleProvider);
+    } catch (err) {
+      console.log(err);
+    }
+  };
   return (
     <>
       <Grid container>
@@ -23,6 +32,7 @@ const Signin = () => {
             ></TextField>
             <Typography variant="h6">Password</Typography>
             <TextField
+              onChange={() => setUsername(e.target.value)}
               label="Password"
               variant="outlined"
               style={{ width: "400px" }}
@@ -38,6 +48,7 @@ const Signin = () => {
                 marginTop: "20px",
                 padding: "10px 0",
               }}
+              onClick={SignInWithGoogle}
             >
               Sign In
             </Button>
