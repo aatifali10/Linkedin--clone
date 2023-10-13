@@ -3,13 +3,31 @@ import React, { useState } from "react";
 import linkedinlogo from "./linkedinlogo.png";
 import { Link } from "react-router-dom";
 import { signInWithPopup } from "firebase/auth";
-import { auth, googleProvider } from "../firebase/setup";
+import { auth, database, googleProvider } from "../firebase/setup";
+import { addDoc, collection } from "firebase/firestore";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Signin = () => {
   const [username, setUsername] = useState("");
-  const SignInWithGoogle = async () => {
+
+  const userAdd = async () => {
+    const userRef = collection(database, "users");
     try {
-      await signInWithPopup(auth, googleProvider);
+      await addDoc(userRef, {
+        username: username,
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const SignInWithGoogle = async () => {
+    !username && toast.warning("Please enter user name");
+    try {
+      username && (await signInWithPopup(auth, googleProvider));
+      userAdd();
+      setUsername("");
     } catch (err) {
       console.log(err);
     }
@@ -17,6 +35,7 @@ const Signin = () => {
   return (
     <>
       <Grid container>
+        <ToastContainer autoClose={2000} position="top-right" />
         <Grid xs={6}>
           <img src={linkedinlogo} alt="linkdIn" style={{ width: "130px" }} />
           <div>
@@ -26,13 +45,14 @@ const Signin = () => {
             <Typography variant="h6">Email or phone</Typography>
 
             <TextField
+              onChange={(e) => setUsername(e.target.value)}
               label="Email or Phone"
               variant="outlined"
               style={{ width: "400px" }}
             ></TextField>
             <Typography variant="h6">Password</Typography>
             <TextField
-              onChange={() => setUsername(e.target.value)}
+              onChange={(e) => setUsername(e.target.value)}
               label="Password"
               variant="outlined"
               style={{ width: "400px" }}

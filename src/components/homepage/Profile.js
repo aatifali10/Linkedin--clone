@@ -52,7 +52,7 @@ const ProtfilePhoto = () => {
       <ProfileDetails>
         <Stack direction="row">
           <Typography variant="h3" mr={0.5} mb={2}>
-            Parag Agrawal
+            Aatif Ali
           </Typography>
         </Stack>
         <Typography variant="body2">105 profile views</Typography>
