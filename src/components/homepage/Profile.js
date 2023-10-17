@@ -3,6 +3,7 @@ import { Paper, Box, Typography, Button, Stack } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import Groups2Icon from "@mui/icons-material/Groups2";
+import Divider from "@mui/material/Divider";
 
 const MuiButton = styled(Button)(({ theme }) => ({
   borderRadius: theme.shape.borderRadius * 10,
@@ -12,11 +13,11 @@ const MuiButton = styled(Button)(({ theme }) => ({
 }));
 
 const ProfileImg = styled(Box)(({ theme }) => ({
-  width: 50,
-  height: 50,
+  width: 65,
+  height: 65,
   position: "absolute",
-  left: 15,
-  top: "7%",
+  left: 100,
+  top: "10%",
   borderRadius: "100%",
   border: "5px solid #fff",
   [theme.breakpoints.down(theme.breakpoints.values.sm)]: {
@@ -42,7 +43,7 @@ const ConverPhoto = styled(Box)(({ theme }) => ({
 
 const ProtfilePhoto = () => {
   return (
-    <Paper style={{ position: "relative", width: "100%" }}>
+    <Paper style={{ position: "relative", width: "100%", textAlign: "center" }}>
       <ConverPhoto
         component="img"
         src="/images/userbanner.svg"
@@ -50,14 +51,20 @@ const ProtfilePhoto = () => {
       />
       <ProfileImg component="img" src="/images/userprofile.jpg" alt="" />
       <ProfileDetails>
-        <Stack direction="row">
-          <Typography variant="h3" mr={0.5} mb={2}>
+        <Stack direction="column">
+          <Typography variant="h3" mr={0.9} mb={2}>
             Aatif Ali
           </Typography>
+          <Typography variant="body1" mb={2}>
+            A front-end developer who loves to convert pixels into code my core
+            expertise are Html5 || CSS3 || JavaScript || React js || Bootstrap
+            || Tailwind & Firebase.
+          </Typography>
         </Stack>
-        <Typography variant="body2">105 profile views</Typography>
-        <Typography variant="body2">322 post impressions</Typography>
-        <Stack spacing={1} mt={1} m={2}>
+        <Divider />
+        <Typography variant="body2">Who's viewed your profile  </Typography>
+        <Typography variant="body2">Impressions of your post</Typography>
+        {/* <Stack spacing={1} mt={1} m={2}>
           <MuiButton
             variant="outlined"
             color="primary"
@@ -72,7 +79,8 @@ const ProtfilePhoto = () => {
           >
             Events
           </MuiButton>
-        </Stack>
+        </Stack> */}
+        <Divider />
       </ProfileDetails>
     </Paper>
   );

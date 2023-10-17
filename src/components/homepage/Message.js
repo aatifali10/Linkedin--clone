@@ -36,7 +36,10 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 const Message = () => {
   return (
     <>
-      <Paper padding="20px" style={{ padding: "10px 20px" }}>
+      <Paper
+        padding="20px"
+        style={{ padding: "10px 20px", marginBottom: "10px" }}
+      >
         <Stack direction="row">
           <Box
             component="img"

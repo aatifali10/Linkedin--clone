@@ -10,7 +10,7 @@ const Home = () => {
       <Container>
         <Grid container spacing={2} mt={11}>
           <Hidden mdDown={true}>
-            <Grid item md={2} sm={12}>
+            <Grid item md={3} sm={12}>
               <Profile />
             </Grid>
           </Hidden>
@@ -20,7 +20,7 @@ const Home = () => {
             </Grid>
           </Hidden>
           <Hidden mdDown={true}>
-            <Grid item md={4}>
+            <Grid item md={3}>
               <Feed />
             </Grid>
           </Hidden>
