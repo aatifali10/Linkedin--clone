@@ -9,17 +9,19 @@ import { useEffect } from "react";
 import { useState } from "react";
 
 const Home = () => {
-  const [userdata, setUserdata] = useState([]);
+  const [userData, setUserData] = useState([]);
 
-  const getUser = async () => {
-    try {
-      const userDocument = doc(database, "U sers", `${auth.currentUser?.uid}`);
-      const data = await getDoc(userDocument);
-      setUserdata(data);
-      console.log(data);
-    } catch (err) {
-      console.log(err);
-    }
+  const getUser = () => {
+    setTimeout(async () => {
+      try {
+        const userDocument = doc(database, "Users", `${auth.currentUser?.uid}`);
+        const data = await getDoc(userDocument);
+        setUserData(data);
+        console.log(data);
+      } catch (err) {
+        console.log(err);
+      }
+    }, 1000);
   };
 
   useEffect(() => {
@@ -38,7 +40,7 @@ const Home = () => {
           {/* </Hidden> */}
           {/* <Hidden mdDown={true}> */}
           <Grid item md={6} sm={12}>
-            <Post userdata={userdata} />
+            <Post userData={userData} />
           </Grid>
           {/* </Hidden> */}
           {/* <Hidden mdDown={true}> */}
