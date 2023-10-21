@@ -7,7 +7,11 @@ import PhotoSizeSelectActualIcon from "@mui/icons-material/PhotoSizeSelectActual
 import SmartDisplayIcon from "@mui/icons-material/SmartDisplay";
 import ArticleIcon from "@mui/icons-material/Article";
 import EventIcon from "@mui/icons-material/Event";
-import Slide from "./Slide";
+import Divider from "@mui/material/Divider";
+import { useState } from "react";
+// import MenuItem from "@mui/material/MenuItem";
+// import Select from "@mui/material/Select";
+import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -35,6 +39,10 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 const Message = () => {
+  const [menu, setMenu] = useState("");
+  const handleChange = (event) => {
+    setMenu(event.target.value);
+  };
   return (
     <>
       <Paper
@@ -75,7 +83,16 @@ const Message = () => {
           </Stack>
         </Stack>
       </Paper>
-      <Slide />
+      <Stack direction="row" spacing={1} style={{ paddingBottom: "20px" }}>
+        <Divider style={{ width: "81%", height: "13px" }} />
+
+        <Typography>Sort by:</Typography>
+        {/* <Select onChange={handleChange}> */}
+        <ArrowDropDownIcon color="secondary" />
+        {/* <MenuItem value={10}>Top</MenuItem>
+        <MenuItem value={20}>Recent</MenuItem> */}
+        {/* </Select> */}
+      </Stack>
     </>
   );
 };
