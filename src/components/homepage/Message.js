@@ -7,6 +7,7 @@ import PhotoSizeSelectActualIcon from "@mui/icons-material/PhotoSizeSelectActual
 import SmartDisplayIcon from "@mui/icons-material/SmartDisplay";
 import ArticleIcon from "@mui/icons-material/Article";
 import EventIcon from "@mui/icons-material/Event";
+import Slide from "./Slide";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -74,6 +75,7 @@ const Message = () => {
           </Stack>
         </Stack>
       </Paper>
+      <Slide />
     </>
   );
 };
