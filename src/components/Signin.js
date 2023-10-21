@@ -4,18 +4,23 @@ import linkedinlogo from "./linkedinlogo.png";
 import { Link } from "react-router-dom";
 import { signInWithPopup } from "firebase/auth";
 import { auth, database, googleProvider } from "../firebase/setup";
-import { addDoc, collection } from "firebase/firestore";
+import { doc, setDoc } from "firebase/firestore";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import signin from "../images/signin.svg";
 
 const Signin = () => {
   const [username, setUsername] = useState("");
+  const [designation, setDesignation] = useState("");
+  // const [email, setEmail] = useState("");
 
   const userAdd = async () => {
-    const userRef = collection(database, "users");
+    const userRef = doc(database, "users", auth.currentUser?.uid);
     try {
-      await addDoc(userRef, {
+      await setDoc(userRef, {
         username: username,
+        email: auth.currentUser?.email,
+        designation: designation,
       });
     } catch (err) {
       console.log(err);
@@ -34,7 +39,7 @@ const Signin = () => {
   };
   return (
     <>
-      <Grid container>
+      <Grid container style={{ padding: "100px", overflow: "hidden" }}>
         <ToastContainer autoClose={2000} position="top-right" />
         <Grid xs={6}>
           <img src={linkedinlogo} alt="linkdIn" style={{ width: "130px" }} />
@@ -46,14 +51,21 @@ const Signin = () => {
 
             <TextField
               onChange={(e) => setUsername(e.target.value)}
-              label="Email or Phone"
+              label="user or Phone"
               variant="outlined"
               style={{ width: "400px" }}
             ></TextField>
             <Typography variant="h6">Password</Typography>
             <TextField
               onChange={(e) => setUsername(e.target.value)}
-              label="Password"
+              label="Email"
+              variant="outlined"
+              style={{ width: "400px" }}
+            ></TextField>
+            <Typography variant="h6">Designation</Typography>
+            <TextField
+              onChange={(e) => setDesignation(e.target.value)}
+              label="Designation"
               variant="outlined"
               style={{ width: "400px" }}
             ></TextField>
@@ -81,7 +93,9 @@ const Signin = () => {
           <br />
           <Button></Button>
         </Grid>
-        <Grid xs={6}>Social Icons</Grid>
+        <Grid xs={6}>
+          <img src={signin} alt="" width={700} />
+        </Grid>
       </Grid>
     </>
   );

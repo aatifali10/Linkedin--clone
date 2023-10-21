@@ -1,4 +1,4 @@
-import { Paper, Box, Typography, Stack, Divider } from "@mui/material";
+import { Box, Typography, Stack, Divider } from "@mui/material";
 import Message from "./Message";
 import ThumbUpIcon from "@mui/icons-material/ThumbUp";
 import MessageIcon from "@mui/icons-material/Message";
@@ -9,7 +9,8 @@ import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
 import ahmed from "../../images/ahmed.jpg";
 
-export default function Post() {
+export default function Post({ userdata }) {
+  console.log(userdata._document);
   return (
     <>
       <Message />
@@ -54,19 +55,6 @@ export default function Post() {
           </Stack>
         </Stack>
       </Card>
-      {/*
-        <Stack>
-          <Typography>Company Name</Typography>
-          <Typography>
-            - PPC Specialist (2-3 Years of Exp) (U.S Region) - Brand Specialist
-            (3+ Years of Exp) - Content Writer (2-3 Years of Exp) - Project
-            Coordinator (1-3 Years of Exp) - Associate Software Engineer
-            (Preferred Language Dot Net) (6 months-1 Year of Exp) - Software
-            Engineer (Preferred Language Dot Net) (1-3 Year of Exp) - Software
-            Engineering Intern (Backend) - Sales Executive (Bark Platform) (1-3
-            Years of Exp)
-          </Typography>
-          */}
     </>
   );
 }
