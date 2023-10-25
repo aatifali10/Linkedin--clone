@@ -1,4 +1,4 @@
-import { Grid, Container, Hidden } from "@mui/material";
+import { Grid, Container } from "@mui/material";
 import React from "react";
 import Post from "./Post";
 import Profile from "./Profile";
@@ -9,12 +9,12 @@ import { useEffect } from "react";
 import { useState } from "react";
 
 const Home = () => {
-  const [userData, setUserData] = useState([]);
+  const [userData, setUserData] = useState(null);
 
-  const getUser = () => {
+  const getUser = async () => {
     setTimeout(async () => {
       try {
-        const userDocument = doc(database, "Users", `${auth.currentUser?.uid}`);
+        const userDocument = doc(database, "users", `${auth.currentUser?.uid}`);
         const data = await getDoc(userDocument);
         setUserData(data);
         console.log(data);
@@ -28,26 +28,20 @@ const Home = () => {
     getUser();
   }, []);
 
-  console.log(auth);
+  // console.log(auth);
   return (
     <>
       <Container>
         <Grid container spacing={2} mt={11}>
-          {/* <Hidden mdDown={true}> */}
           <Grid item md={3} sm={12}>
-            <Profile />
+            <Profile userData={userData} />
           </Grid>
-          {/* </Hidden> */}
-          {/* <Hidden mdDown={true}> */}
           <Grid item md={6} sm={12}>
             <Post userData={userData} />
           </Grid>
-          {/* </Hidden> */}
-          {/* <Hidden mdDown={true}> */}
           <Grid item md={3} sm={12}>
             <Feed />
           </Grid>
-          {/* </Hidden> */}
         </Grid>
       </Container>
     </>

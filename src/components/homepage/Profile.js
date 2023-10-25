@@ -41,7 +41,10 @@ const ConverPhoto = styled(Box)(({ theme }) => ({
   },
 }));
 
-const ProtfilePhoto = () => {
+const ProtfilePhoto = ({ userData }) => {
+  console.log(
+    userData?._document.data.value.mapValue.fields.designation.stringValue
+  );
   return (
     <Paper style={{ position: "relative", width: "100%", textAlign: "center" }}>
       <ConverPhoto
@@ -62,7 +65,7 @@ const ProtfilePhoto = () => {
           </Typography>
         </Stack>
         <Divider />
-        <Typography variant="body2">Who's viewed your profile  </Typography>
+        <Typography variant="body2">Who's viewed your profile </Typography>
         <Typography variant="body2">Impressions of your post</Typography>
         {/* <Stack spacing={1} mt={1} m={2}>
           <MuiButton
