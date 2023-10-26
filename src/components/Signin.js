@@ -1,7 +1,7 @@
 import { Grid, Typography, TextField, Button } from "@mui/material";
 import React, { useState } from "react";
 import linkedinlogo from "./linkedinlogo.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { signInWithPopup } from "firebase/auth";
 import { auth, database, googleProvider } from "../firebase/setup";
 import { doc, setDoc } from "firebase/firestore";
@@ -10,6 +10,7 @@ import "react-toastify/dist/ReactToastify.css";
 import signin from "../images/signin.svg";
 
 const Signin = () => {
+  const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [designation, setDesignation] = useState("");
   // const [email, setEmail] = useState("");
@@ -34,6 +35,7 @@ const Signin = () => {
       username && (await signInWithPopup(auth, googleProvider));
       userAdd();
       setUsername("");
+      navigate("/");
     } catch (err) {
       console.log(err);
     }

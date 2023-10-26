@@ -51,16 +51,23 @@ const ProtfilePhoto = ({ userData }) => {
     <Paper sx={{ position: "relative", overflow: "hidden" }}>
       <ConverPhoto
         component="img"
+        src="/images/userbanner.svg"
+        alt="userbanner"
+      />
+      <ProfileImg
+        component="img"
         src={
           userData?._document.data.value.mapValue.fields.profile_img.stringValue
         }
-        alt="userbanner"
+        alt=""
       />
-      <ProfileImg component="img" src="/images/userprofile.jpg" alt="" />
       <ProfileDetails>
         <Stack direction="row">
           <Typography variant="h1" mr={0.5}>
-            Parag Agrawal
+            {
+              userData?._document.data.value.mapValue.fields.username
+                .stringValue
+            }
           </Typography>
           <sup>. 3rd</sup>
         </Stack>

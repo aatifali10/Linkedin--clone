@@ -34,8 +34,8 @@ function App() {
         <Header userData={userData} />
         <Routes>
           <Route path="/signin" element={<Signin />} />
-          <Route path="/" element={<User userData={userData} />}></Route>
-          <Route path="/home" element={<Home userData={userData} />}></Route>
+          <Route path="/user" element={<User userData={userData} />}></Route>
+          <Route path="/" element={<Home userData={userData} />}></Route>
         </Routes>
       </BrowserRouter>
     </div>
