@@ -76,12 +76,12 @@ const experience = [
   },
 ];
 
-const User = () => {
+const User = ({ userData }) => {
   return (
     <Container>
       <Grid container spacing={2} mt={11}>
         <Grid item md={9} sm={12}>
-          <ProtfilePhoto />
+          <ProtfilePhoto userData={userData} />
           <ProfileAbout />
           <ProfileActivity />
           <ProfileEductionAndExperience title="Experience" list={experience} />

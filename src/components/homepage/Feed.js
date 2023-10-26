@@ -24,7 +24,7 @@ const People = [
   },
 ];
 
-const PeopleKnow = () => {
+const PeopleKnow = ({ userData }) => {
   return (
     <Paper sx={{ p: 2.5 }}>
       <Typography variant="h3">Add to your feed</Typography>

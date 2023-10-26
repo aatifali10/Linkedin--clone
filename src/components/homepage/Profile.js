@@ -42,9 +42,6 @@ const ConverPhoto = styled(Box)(({ theme }) => ({
 }));
 
 const ProtfilePhoto = ({ userData }) => {
-  console.log(
-    userData?._document.data.value.mapValue.fields.designation.stringValue
-  );
   return (
     <Paper style={{ position: "relative", width: "100%", textAlign: "center" }}>
       <ConverPhoto
@@ -52,11 +49,20 @@ const ProtfilePhoto = ({ userData }) => {
         src="/images/userbanner.svg"
         alt="userbanner"
       />
-      <ProfileImg component="img" src="/images/userprofile.jpg" alt="" />
+      <ProfileImg
+        component="img"
+        src={
+          userData?._document.data.value.mapValue.fields.profile_img.stringValue
+        }
+        alt=""
+      />
       <ProfileDetails>
         <Stack direction="column">
           <Typography variant="h3" mr={0.9} mb={2}>
-            Aatif Ali
+            {
+              userData?._document.data.value.mapValue.fields.username
+                .stringValue
+            }
           </Typography>
           <Typography variant="body1" mb={2}>
             A front-end developer who loves to convert pixels into code my core

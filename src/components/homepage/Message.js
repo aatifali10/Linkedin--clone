@@ -38,7 +38,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-const Message = () => {
+const Message = ({ userData }) => {
   const [menu, setMenu] = useState("");
   const handleChange = (event) => {
     setMenu(event.target.value);
@@ -52,7 +52,10 @@ const Message = () => {
         <Stack direction="row">
           <Box
             component="img"
-            src="https://pbs.twimg.com/profile_images/1617828531039539200/MHdha04v_400x400.jpg"
+            src={
+              userData?._document.data.value.mapValue.fields.profile_img
+                .stringValue
+            }
             alt="logo"
             height={50}
             style={{ borderRadius: "100px" }}

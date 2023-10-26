@@ -72,7 +72,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-export default function Header() {
+export default function Header({ userData }) {
   const theme = useTheme();
   const { toggleColorMode } = useContext(ColorModeContext);
 
@@ -264,7 +264,10 @@ export default function Header() {
                 <Avatar>
                   <Box
                     component="img"
-                    src="/images/userprofile.jpg"
+                    src={
+                      userData?._document.data.value.mapValue.fields.profile_img
+                        .stringValue
+                    }
                     alt="logo"
                     width="100%"
                   />

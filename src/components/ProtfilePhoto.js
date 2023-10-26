@@ -46,12 +46,14 @@ const ConverPhoto = styled(Box)(({ theme }) => ({
   },
 }));
 
-const ProtfilePhoto = () => {
+const ProtfilePhoto = ({ userData }) => {
   return (
     <Paper sx={{ position: "relative", overflow: "hidden" }}>
       <ConverPhoto
         component="img"
-        src="/images/userbanner.svg"
+        src={
+          userData?._document.data.value.mapValue.fields.profile_img.stringValue
+        }
         alt="userbanner"
       />
       <ProfileImg component="img" src="/images/userprofile.jpg" alt="" />

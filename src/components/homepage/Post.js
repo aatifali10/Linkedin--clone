@@ -9,24 +9,37 @@ import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
 import ahmed from "../../images/ahmed.jpg";
 
-export default function Post() {
+export default function Post({ userData }) {
   return (
     <>
-      <Message />
+      <Message userData={userData} />
 
       <Card>
         <CardContent>
           <Stack direction="row" spacing={2}>
             <Box
               component="img"
-              src="https://pbs.twimg.com/profile_images/1617828531039539200/MHdha04v_400x400.jpg"
+              src={
+                userData?._document.data.value.mapValue.fields.profile_img
+                  .stringValue
+              }
               alt="logo"
               height={50}
               style={{ borderRadius: "100px" }}
             />
             <Stack>
-              <Typography variant="h3">Ahmed Shahzad</Typography>
-              <Typography variant="p">Crickter</Typography>
+              <Typography variant="h3">
+                {
+                  userData?._document.data.value.mapValue.fields.username
+                    .stringValue
+                }
+              </Typography>
+              <Typography variant="p">
+                {
+                  userData?._document.data.value.mapValue.fields.designation
+                    .stringValue
+                }
+              </Typography>
               <Typography variant="p">1h</Typography>
             </Stack>
           </Stack>

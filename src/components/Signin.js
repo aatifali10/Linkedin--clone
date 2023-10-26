@@ -21,6 +21,7 @@ const Signin = () => {
         username: username,
         email: auth.currentUser?.email,
         designation: designation,
+        profile_img: auth.currentUser?.photoURL,
       });
     } catch (err) {
       console.log(err);
@@ -47,15 +48,9 @@ const Signin = () => {
             <Typography style={{ fontSize: "50px", margin: "20px 0" }}>
               Find jobs through your community
             </Typography>
-            <Typography variant="h6">Email or phone</Typography>
+            <Typography variant="h6"></Typography>
 
-            <TextField
-              onChange={(e) => setUsername(e.target.value)}
-              label="user or Phone"
-              variant="outlined"
-              style={{ width: "400px" }}
-            ></TextField>
-            <Typography variant="h6">Password</Typography>
+            <Typography variant="h6">Email or phone</Typography>
             <TextField
               onChange={(e) => setUsername(e.target.value)}
               label="Email"
