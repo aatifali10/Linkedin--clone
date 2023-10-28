@@ -14,7 +14,11 @@ function App() {
   const getUser = async () => {
     setTimeout(async () => {
       try {
-        const userDocument = doc(database, "users", `${auth.currentUser?.uid}`);
+        const userDocument = doc(
+          database,
+          `users${auth.currentUser?.uid}`,
+          `${auth.currentUser?.uid}`
+        );
         const data = await getDoc(userDocument);
         setUserData(data);
         console.log(data);
@@ -33,9 +37,9 @@ function App() {
       <BrowserRouter>
         <Header userData={userData} />
         <Routes>
-          <Route path="/signin" element={<Signin />} />
+          <Route path="/" element={<Signin />} />
           <Route path="/user" element={<User userData={userData} />}></Route>
-          <Route path="/" element={<Home userData={userData} />}></Route>
+          <Route path="/home" element={<Home userData={userData} />}></Route>
         </Routes>
       </BrowserRouter>
     </div>

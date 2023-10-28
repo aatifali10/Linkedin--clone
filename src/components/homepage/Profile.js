@@ -1,8 +1,6 @@
 import React from "react";
 import { Paper, Box, Typography, Button, Stack } from "@mui/material";
 import { styled } from "@mui/material/styles";
-import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
-import Groups2Icon from "@mui/icons-material/Groups2";
 import Divider from "@mui/material/Divider";
 
 const MuiButton = styled(Button)(({ theme }) => ({
@@ -52,7 +50,7 @@ const ProtfilePhoto = ({ userData }) => {
       <ProfileImg
         component="img"
         src={
-          userData?._document.data.value.mapValue.fields.profile_img.stringValue
+          userData?._document?.data.value.mapValue.fields.profile_img.stringValue
         }
         alt=""
       />
@@ -60,7 +58,7 @@ const ProtfilePhoto = ({ userData }) => {
         <Stack direction="column">
           <Typography variant="h3" mr={0.9} mb={2}>
             {
-              userData?._document.data.value.mapValue.fields.username
+              userData?._document?.data.value.mapValue.fields.username
                 .stringValue
             }
           </Typography>

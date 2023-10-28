@@ -16,7 +16,11 @@ const Signin = () => {
   // const [email, setEmail] = useState("");
 
   const userAdd = async () => {
-    const userRef = doc(database, "users", auth.currentUser?.uid);
+    const userRef = doc(
+      database,
+      `users${auth.currentUser?.uid}`,
+      auth.currentUser?.uid
+    );
     try {
       await setDoc(userRef, {
         username: username,
@@ -35,7 +39,7 @@ const Signin = () => {
       username && (await signInWithPopup(auth, googleProvider));
       userAdd();
       setUsername("");
-      navigate("/");
+      navigate("/home");
     } catch (err) {
       console.log(err);
     }

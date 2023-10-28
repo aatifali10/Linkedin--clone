@@ -265,7 +265,7 @@ export default function Header({ userData }) {
                   <Box
                     component="img"
                     src={
-                      userData?._document.data.value.mapValue.fields.profile_img
+                      userData?._document?.data.value.mapValue.fields.profile_img
                         .stringValue
                     }
                     alt="logo"

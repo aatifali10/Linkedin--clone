@@ -10,6 +10,7 @@ import CardContent from "@mui/material/CardContent";
 import ahmed from "../../images/ahmed.jpg";
 
 export default function Post({ userData }) {
+  console.log(userData);
   return (
     <>
       <Message userData={userData} />
@@ -20,7 +21,7 @@ export default function Post({ userData }) {
             <Box
               component="img"
               src={
-                userData?._document.data.value.mapValue.fields.profile_img
+                userData?._document?.data.value.mapValue.fields.profile_img
                   .stringValue
               }
               alt="logo"
@@ -30,13 +31,13 @@ export default function Post({ userData }) {
             <Stack>
               <Typography variant="h3">
                 {
-                  userData?._document.data.value.mapValue.fields.username
+                  userData?._document?.data.value.mapValue.fields.username
                     .stringValue
                 }
               </Typography>
               <Typography variant="p">
                 {
-                  userData?._document.data.value.mapValue.fields.designation
+                  userData?._document?.data.value.mapValue.fields.designation
                     .stringValue
                 }
               </Typography>
