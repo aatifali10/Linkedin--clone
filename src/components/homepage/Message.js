@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Box, Paper, Typography } from "@mui/material";
 import { Stack } from "@mui/system";
 import { styled } from "@mui/material/styles";
@@ -12,6 +12,7 @@ import { useState } from "react";
 // import MenuItem from "@mui/material/MenuItem";
 // import Select from "@mui/material/Select";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+import ModalPost from "./ModalPost";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -39,6 +40,8 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 const Message = ({ userData }) => {
+  const PostRef = useRef(null);
+
   const [menu, setMenu] = useState("");
   const handleChange = (event) => {
     setMenu(event.target.value);
@@ -62,11 +65,13 @@ const Message = ({ userData }) => {
           />
           <Search style={{ width: "100%", borderRadius: "100px" }}>
             <StyledInputBase
+              onClick={() => PostRef.current?.click()}
               placeholder="Start a post"
               inputProps={{ "aria-label": "Start a post" }}
             />
           </Search>
         </Stack>
+        <ModalPost ref={PostRef} />
         <Stack direction="row" spacing={5} mt={2}>
           <Stack direction="row" spacing={1}>
             <PhotoSizeSelectActualIcon />

@@ -10,7 +10,7 @@ import CardContent from "@mui/material/CardContent";
 import ahmed from "../../images/ahmed.jpg";
 
 export default function Post({ userData }) {
-  console.log(userData);
+  // console.log(userData);
   return (
     <>
       <Message userData={userData} />
