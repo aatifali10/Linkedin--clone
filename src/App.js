@@ -21,7 +21,6 @@ function App() {
         );
         const data = await getDoc(userDocument);
         setUserData(data);
-        console.log(data);
       } catch (err) {
         console.log(err);
       }

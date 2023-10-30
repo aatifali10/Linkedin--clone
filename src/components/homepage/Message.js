@@ -8,7 +8,6 @@ import SmartDisplayIcon from "@mui/icons-material/SmartDisplay";
 import ArticleIcon from "@mui/icons-material/Article";
 import EventIcon from "@mui/icons-material/Event";
 import Divider from "@mui/material/Divider";
-import { useState } from "react";
 // import MenuItem from "@mui/material/MenuItem";
 // import Select from "@mui/material/Select";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
@@ -42,10 +41,6 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 const Message = ({ userData }) => {
   const PostRef = useRef(null);
 
-  const [menu, setMenu] = useState("");
-  const handleChange = (event) => {
-    setMenu(event.target.value);
-  };
   return (
     <>
       <Paper
@@ -95,11 +90,7 @@ const Message = ({ userData }) => {
         <Divider style={{ width: "81%", height: "13px" }} />
 
         <Typography>Sort by:</Typography>
-        {/* <Select onChange={handleChange}> */}
         <ArrowDropDownIcon color="secondary" />
-        {/* <MenuItem value={10}>Top</MenuItem>
-        <MenuItem value={20}>Recent</MenuItem> */}
-        {/* </Select> */}
       </Stack>
     </>
   );
