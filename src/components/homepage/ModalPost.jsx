@@ -1,9 +1,14 @@
-import { Button, TextField } from "@mui/material";
+import { Button, Stack, TextField, Typography } from "@mui/material";
 import { setDoc, doc, getDoc } from "firebase/firestore";
 import { forwardRef } from "react";
 import Modal from "react-modal";
 import { auth, database } from "../../firebase/setup";
-import { useState ,useEffect} from "react";
+import { useState, useEffect } from "react";
+
+import PhotoSizeSelectActualIcon from "@mui/icons-material/PhotoSizeSelectActual";
+import SmartDisplayIcon from "@mui/icons-material/SmartDisplay";
+import ArticleIcon from "@mui/icons-material/Article";
+import EventIcon from "@mui/icons-material/Event";
 const customStyles = {
   content: {
     top: "50%",
@@ -82,6 +87,16 @@ function ModalPost(props, ref) {
         style={customStyles}
         contentLabel="Example Modal"
       >
+        <Stack>
+          <Button
+            sx={{ display: "flex", justifyContent: "end" }}
+            size="large"
+            onClick={closeModal}
+          >
+            X
+          </Button>
+        </Stack>
+
         <h2 ref={(_subtitle) => (subtitle = _subtitle)}>
           What do you want to talk about?
         </h2>
@@ -94,11 +109,29 @@ function ModalPost(props, ref) {
           rows={4}
         />
         <br />
+        <Stack direction="row" spacing={5} mt={2}>
+          <Stack direction="row" spacing={1}>
+            <PhotoSizeSelectActualIcon />
+            <Typography>Photo</Typography>
+          </Stack>
+          <Stack direction="row" spacing={1}>
+            <SmartDisplayIcon />
+            <Typography>Video</Typography>
+          </Stack>
+          <Stack direction="row" spacing={1}>
+            <EventIcon />
+            <Typography>Audio event</Typography>
+          </Stack>
+          <Stack direction="row" spacing={1}>
+            <ArticleIcon />
+            <Typography>Write article</Typography>
+          </Stack>
+        </Stack>
         <Button
-        sx={{ mt: "10px" }}
-        variant="outlined"
-        size="small"
-        onClick={closeModal}
+          sx={{ mt: "10px" }}
+          variant="outlined"
+          size="small"
+          onClick={closeModal}
         >
           Cancel
         </Button>
