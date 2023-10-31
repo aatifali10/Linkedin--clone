@@ -37,23 +37,23 @@ function ModalPost(props, ref) {
   }
 
   const [text, setText] = useState("");
-  // const [userData, setUserData] = useState([]);
+  const [userData, setUserData] = useState([]);
 
-  // const getUser = () => {
-  //   setTimeout(async () => {
-  //     try {
-  //       const userDocument = doc(database, "users", `${auth.currentUser?.uid}`);
-  //       const data = await getDoc(userDocument);
-  //       setUserData(data);
-  //     } catch (err) {
-  //       console.log(err);
-  //     }
-  //   }, 1000);
-  // };
+  const getUser = () => {
+    setTimeout(async () => {
+      try {
+        const userDocument = doc(database, "users", `${auth.currentUser?.uid}`);
+        const data = await getDoc(userDocument);
+        setUserData(data);
+      } catch (err) {
+        console.log(err);
+      }
+    }, 1000);
+  };
 
-  // useEffect(() => {
-  //   getUser();
-  // }, []);
+  useEffect(() => {
+    getUser();
+  }, []);
 
   const addPost = async () => {
     const postDocument = doc(
@@ -65,14 +65,14 @@ function ModalPost(props, ref) {
     try {
       await setDoc(postRef, {
         textPost: text,
-        // username:
-        //   userData._document?.data?.value.mapValue.fields.username.stringValue,
-        // designation:
-        //   userData._document?.data?.value.mapValue.fields.designation
-        //     .stringValue,
-        // profile_image:
-        //   userData._document?.data?.value.mapValue.fields.profile_image
-        //     .stringValue,
+        username:
+          userData._document?.data?.value.mapValue.fields.username.stringValue,
+        designation:
+          userData._document?.data?.value.mapValue.fields.designation
+            .stringValue,
+        profile_image:
+          userData._document?.data?.value.mapValue.fields.profile_image
+            .stringValue,
       });
     } catch (err) {
       console.error(err);

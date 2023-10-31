@@ -85,10 +85,16 @@ export default function Post({ userData }) {
                 </Stack>
                 <Typography variant="h5">{post.textPost}</Typography>
               </CardContent>
-              <CardMedia component="img" height={300} image={ahmed}></CardMedia>
+              {posts.photo && (
+                <CardMedia
+                  component="img"
+                  height={300}
+                  image={ahmed}
+                ></CardMedia>
+              )}
               <Divider />
 
-              <Stack direction="row" spacing={9} mt={2}>
+              <Stack direction="row" spacing={9} m={2}>
                 <Stack direction="row" spacing={1}>
                   <ThumbUpIcon />
                   <Typography>Like</Typography>
