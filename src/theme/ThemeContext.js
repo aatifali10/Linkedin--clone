@@ -17,7 +17,7 @@ const ThemeContextProvider = ({ children }) => {
   }, []);
 
   useEffect(() => {
-    console.log("ColorModeContext", mode);
+    // console.log("ColorModeContext", mode);
   }, [mode]);
 
   return (

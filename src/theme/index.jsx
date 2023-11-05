@@ -7,7 +7,7 @@ import { ColorModeContext } from "./ThemeContext";
 const ThemeCustomization = ({ children }) => {
   const { mode } = useContext(ColorModeContext);
   useEffect(() => {
-    console.log("ThemeCustomization", mode);
+    // console.log("ThemeCustomization", mode);
   }, [mode]);
   const theme = useMemo(
     () =>

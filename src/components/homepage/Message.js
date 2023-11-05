@@ -8,8 +8,6 @@ import SmartDisplayIcon from "@mui/icons-material/SmartDisplay";
 import ArticleIcon from "@mui/icons-material/Article";
 import EventIcon from "@mui/icons-material/Event";
 import Divider from "@mui/material/Divider";
-// import MenuItem from "@mui/material/MenuItem";
-// import Select from "@mui/material/Select";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import ModalPost from "./ModalPost";
 

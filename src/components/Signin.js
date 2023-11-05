@@ -19,7 +19,7 @@ const Signin = () => {
     const userRef = doc(
       database,
       `users${auth.currentUser?.uid}`,
-      auth.currentUser?.uid
+      `${auth.currentUser?.uid}`
     );
     try {
       await setDoc(userRef, {
