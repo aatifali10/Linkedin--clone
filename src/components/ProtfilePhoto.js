@@ -59,7 +59,7 @@ const ProtfilePhoto = ({ userData }) => {
         src={
           userData?._document.data.value.mapValue.fields.profile_img.stringValue
         }
-        alt=""
+        alt="picture not show"
       />
       <ProfileDetails>
         <Stack direction="row">

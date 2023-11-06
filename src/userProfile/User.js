@@ -8,6 +8,7 @@ import ProfileSkills from "../components/ProfileSkills";
 import Interests from "../components/Interests";
 import PeopleViewed from "../components/PeopleViewed";
 import PeopleKnow from "../components/PeopleKnow";
+import Footer from "../components/Footer";
 
 const education = [
   {
@@ -88,6 +89,7 @@ const User = ({ userData }) => {
           <ProfileEductionAndExperience title="Education" list={education} />
           <ProfileSkills />
           <Interests />
+          <Footer />
         </Grid>
         <Hidden mdDown={true}>
           <Grid item md={3}>
